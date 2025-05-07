@@ -13,7 +13,7 @@ int camelcase(char* s) {
 }
 
 int main() {
-    char s[100000];  
+    char s[100000]; 
 
     scanf("%s", s);
 
