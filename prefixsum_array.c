@@ -1,3 +1,5 @@
+//study sum and create_prefix function
+
 #include <stdio.h>
 
 void display(int arr[], int n) {
