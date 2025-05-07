@@ -1,3 +1,5 @@
+//study only for loop
+
 #include <stdio.h>
 #include <stdlib.h>
 
