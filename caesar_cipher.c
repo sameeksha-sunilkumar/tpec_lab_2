@@ -1,3 +1,5 @@
+//study for only
+
 #include <stdio.h>
 #include <string.h>
 
