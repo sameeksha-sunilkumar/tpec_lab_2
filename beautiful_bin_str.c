@@ -1,27 +1,22 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+//study while loop only
 
-int main() {
+#include <stdio.h> 
+#include <string.h> 
+#include <stdlib.h> 
+
+int main(){ 
     int n;  
-    scanf("%d", &n);
-    
-    char* B = (char *)malloc((n + 1) * sizeof(char)); 
-    scanf("%s", B);  
-
-    int count = 0;
-
-    for (int i = 0; i < n - 2; i++) {
-        if (B[i] == '0' && B[i+1] == '1' && B[i+2] == '0') {
-            B[i+2] = '1';  
-            count++;  
-            i += 2; 
-        }
-    }
-
-    printf("%d\n", count);
-
-    free(B);
-
-    return 0;
+    scanf("%d",&n); 
+    char* B = (char *)malloc(10240 * sizeof(char)); 
+    scanf("%s",B); 
+    int i=0,count=0; 
+    while(B[i]){ 
+         if(B[i]=='0'&&B[i+1]=='1'&&B[i+2]=='0'){ 
+B[i+2]='1'; 
+count++; 
+} 
+i++; 
+} 
+printf("%d",count); 
+return 0; 
 }
