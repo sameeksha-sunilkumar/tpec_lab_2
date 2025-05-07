@@ -1,39 +1,50 @@
-#include <stdio.h>
+//study main and isPow2
 
-int isPowerOf2(unsigned long n) {
-    return (n & (n - 1)) == 0;
-}
-
-unsigned long largestPowerOf2(unsigned long n) {
-    unsigned long m = 1;
-    while (m << 1 <= n) {
-        m <<= 1;
-    }
-    return m;
-}
-
+#include <stdio.h> 
+#include <string.h> 
+#include <math.h> 
+#include <stdlib.h> 
+int isPow2(long unsigned  int); 
+unsigned long int largePow(long unsigned int); 
 int main() {
-    int t;
-    scanf("%d", &t);
-
-    while (t--) {
-        unsigned long n;
-        int win = 0;
-        scanf("%lu", &n);
-
-        while (n != 1) {
-            if (isPowerOf2(n))
-                n >>= 1; // divide by 2
-            else
-                n -= largestPowerOf2(n);
-            win++;
-        }
-
-        if (win % 2 == 0)
-            printf("Richard\n");
-        else
-            printf("Louise\n");
+    int t,i,win;
+    long unsigned int n;
+    scanf("%d",&t);
+    for(i=0;i<t;++i)
+    {
+    win=0;
+    scanf("%lu",&n);
+    if(n==1)
+    printf("Richard\n");
+    else
+    {
+    while(n!=1)
+    {
+    if(isPow2(n))
+    n>>=1;
+    else
+    n-=largePow(n);
+    ++win;
     }
-
+    }
+    if(win%2==0)
+    printf("Richard\n");
+    else
+    printf("Louise\n");
+    }
     return 0;
+   }
+   int isPow2(long unsigned int n)
+    {
+    return !(n&(n-1));
+   }
+long unsigned int largePow(long unsigned int n) 
+    { 
+    long unsigned int m; 
+    while(n) 
+        { 
+        m=n; 
+        n=n&(n-1); 
+    } 
+    return m; 
 }
