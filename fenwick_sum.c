@@ -1,3 +1,5 @@
+//study int sum only
+
 #include<stdio.h> 
 #include<math.h>
 
