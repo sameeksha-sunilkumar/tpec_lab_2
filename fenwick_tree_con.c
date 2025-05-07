@@ -1,3 +1,5 @@
+//study int sum and create_fenwick_tree
+
 #include<stdio.h>
 
 int sum(int arr[], int n, int a, int b) {
